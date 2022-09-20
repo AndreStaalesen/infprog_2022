@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Er du myndig?</h2>
+    <p id="myndig-utskrift"></p>
+
+    <p id="studieklar-Utskrift"></p>
+
+    <p id="myName-utskrift"></p>
+
+    <script>
+        const age= 20
+        //if-test for å sjekke om alder er 18 eller over
+        if(age >=18) {
+            document.getElementById("myndig-utskrift").innerHTML = "Ja."
+        } else {
+            document.getElementById("myndig-utskrift").innerHTML = "Nei."
+        }
+
+
+        //if test for å sjekke om navn er riktig
+
+      const myName= "Andre"
+
+    if(myName==="Andre"){
+        document.getElementById("myName-utskrift").innerHTML="Ja mitt navn er Andre faktisk"
+    }
+    else{
+        document.getElementById("myName-utskrift").innerHTML= "jeg heter ikke det"
+    }
+   
+
+        //else if test for å sjekke om alder er bra passende
+    
+        const myAge= 20
+
+    if(myAge<18){
+        document.getElementById("studieklar-Utskrift").innerHTML="du er ikke myndig..."
+    }
+    else if(myAge>=18, myAge<=62){ 
+        document.getElementById("studieklar-Utskrift").innerHTML="du er good"
+    }
+    else  //else som siste fordi alt over 62 er av arket og under 18 er klarert i første del
+        document.getElementById("studieklar-Utskrift").innerHTML="du er klar for pensjon"
+
+
+
+</script>
+    </script>
+    
+</body>
+</html>

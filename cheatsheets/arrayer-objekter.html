@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cheat-sheet: arrayer og objekter</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            background: #f3f3f3;
+        }
+        #products {
+            display: flex; 
+            flex-direction: row;
+            gap: 1rem; 
+        }
+
+        article {
+            background: #fff;
+            padding: 1rem;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h2>Handleliste</h2>
+    <ul id="handleliste">
+
+    </ul>
+
+    <h2>Produkter</h2>
+    <section id="products">
+
+    </section>
+    
+
+    <script>
+        //deklarere en variabel
+        const handleliste = ["brød", "sjokolade", "egg", "kief", "melk"] 
+        console.log(handleliste)
+        //hente størrelsen (antall elementer) i en array 
+        const antallVarer = handleliste.length
+        console.log("Handlelisten inneholder " + antallVarer + " varer")
+        //skrive ut bestemt element fra handlelisten
+        const vare2 = handleliste[1]
+        console.log("Varen på rad 2 i handlelisten er " + vare2) 
+        
+        //skrive ut et bestemt element med dynamisk index fra variabel
+        const index = 3
+        const indexVare = handleliste[index]
+        console.log(`Varen på rad ${index + 1} i handlelisten er ${indexVare}`)
+
+
+        //sortere alfabetisk 
+        //sortering er case sensetivt (store bokstaver priotiteres)
+        handleliste.sort()
+        handleliste.reverse()
+        console.log(handleliste)
+       
+        //legge til en rad i arrayen på slutten av arrayen
+        handleliste.push("papes", "gerro")
+        console.log(handleliste)
+
+
+        //legge til en rad i starten av arrayen 
+        handleliste.unshift("doritos")
+        console.log(handleliste)
+
+
+        //sjekke om noe finnes i array
+        const vareSjekk = handleliste.includes("sjokolade")
+        console.log(vareSjekk)
+
+        //sjekk: hvilken index har egg
+        const vareIndexSjekk = handleliste.indexOf("egg")
+        console.log("Index til egg: " + vareIndexSjekk)
+
+        //liste opp arrayen i html "vise på nettsiden"
+        //<li>Varenavn</li>
+        handleliste.map(vare => document.getElementById("handleliste").innerHTML += `<li>${vare}</li>`)
+
+        //opprette objekt med nøkkel verdi par
+
+        const prod1 = {
+            produsent: "Nike",
+            model: "Dunk Low",
+            sport: "Skating",
+            color: "Red"
+        }
+
+        //skrive ut produktdata til html
+        const prodSport = prod1.sport
+        console.log(prodSport)
+
+        //nytt objekt - alene eller i register (organisert data)
+        //produktregister: flerdimensjonale arrayer (med objekter) lignende excel
+
+        const productRegister = [
+            {
+                produsent: "Nike",
+                model: "SB Dunk Low",     
+                sport: "Skating",
+                color: "Red",
+            },
+            {
+                produsent: "Nike",
+                model: "Kobe 6",     
+                sport: "Basketball",
+                color: "White",
+            },
+            {
+                produsent: "Nike",
+                model: "SB Dunk High",     
+                sport: "Skating",
+                color: "Black",
+            },
+            {
+                produsent: "Nike",
+                model: "HyperZoom",     
+                sport: "Fotball",
+                color: "Red",
+            }
+        ]
+        console.log(productRegister)
+
+        //filtrere produktregister
+
+        //skive ut produkter fra registerer(map)
+
+        productRegister.map(product => document.getElementById("products").innerHTML += `
+        </arcticle>
+            <h3>${product.produsent}</h3>
+            <p>Idrett: ${product.sport} / Farge: ${product.color}</p>
+        </arcticle>
+        
+        ` )
+    </script>
+    
+</body>
+</html>

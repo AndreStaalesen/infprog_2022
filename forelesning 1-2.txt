@@ -1,0 +1,26 @@
+en variabel kan sammenlignees med en gave som må åpnes opp
+variabler er til fordi det ikke går an å legge tekst med tall
+
+variabelverdier:
+String - tekststreng " "
+Number - tall	
+Object - array, dato
+Boolean - sant/usant (av/på)
+NULL - ingenting
+undefined - ikke bestemt (feilstava variabel)
+
+
+deklarere variabler
+const - konstant verdi, scope bestemmer tiljengelighet (når deklarert så kan den ikke endres)
+let - mulig å endre verdi,  scope bestemmer tiljengelighet (let gjør at man feks kan legge til ett år på alder)
+
+var - Mulig å endre, alltid tiljengelig (ikke så mye i bruk lengre pga sikkerhet siden den kan hentes hele tiden)
+
+globale variabler er alltid tiljengelige, noen ferdigdefinerte. - window og document
+
+document - hele html strukturen 
+
+
+
+
+html inspect kan brukes til å luke ut småfeil i koden
