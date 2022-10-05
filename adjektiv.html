@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjektivhistorie</title>
+</head>
+<body>
+
+    <input type="text" id="adjInput" name="adjective-input" /><button onClick="saveAdj()" id="sendAdj">Lagre</button>
+    <script>
+        const text = "<p>Bacon ipsum dolor amet pastrami turkey tongue jerky biltong ground round. Pork ADJ pig turkey, landjaeger tenderloin alcatra swine chuck pork. Leberkas ADJ drumstick landjaeger cupim tri-tip t-bone porchetta strip steak pancetta shoulder cow beef ribs. Buffalo tongue andouille ribeye short loin. Jowl pork ham hock, shankle ham salami capicola alcatra. Burgdoggen filet mignon ADJ, tail meatloaf tenderloin shoulder chicken drumstick biltong turducken pastrami pancetta rump cow. Ribeye porchetta leberkas, spare ribs beef ribs jerky tri-tip.</p>"
+        
+//hente ut adj og telle dem
+//gjør text til en array med ord
+        const textArray = text.split(" ")
+//telle opp antall adj elementer
+       const ADJcount = textArray.filter(word => word === "ADJ").length
+       console.log("du trenger" + ADJcount + "adjektiver")
+        
+       
+//array for p lagre adjektiver
+        let adjectives = []
+
+      
+
+
+//function for å lagre adjectiv
+        function saveAdj() {
+            const adj = document.getElementById("adjInput").value
+            if(adjectives.length < ADJcount) {
+                adjectives.push(adj)
+            } else{
+                //si ifra at det er nok nå
+                alert("du har skrevet nok man")
+                generateAdjectiveStory()
+            }
+            document.getElementById("adjInput").value = ""
+            document.getElementById("adjInput").focus()
+            
+        }
+        function generateAdjectiveStory() {
+            let adjIndexCounter = 0 
+            textArray.map((word, index) => {
+            if(word === "ADJ") {
+                textArray[index] = adjectives[adjIndexCounter]
+                console.log(adjectives[adjIndexCounter])
+                adjIndexCounter++
+                
+            }
+        })
+        document.getElementById("story").innerHTML = textArray.join(" ")
+        console.log(textArray)
+
+        }
+
+       
+       
+        </script>
+
+               </body>
+</html>
